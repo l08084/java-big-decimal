@@ -5,7 +5,13 @@ class BigDecimalPractice {
     public static void main(String[] args) {
         // whyBigDecimal();
         // init();
-        callConst();
+        // callConst();
+        // compare();
+        // compareTo();
+        // add();
+        // subtract();
+        // multiply();
+        divide();
     }
 
     private static void whyBigDecimal() {
@@ -37,4 +43,45 @@ class BigDecimalPractice {
         System.out.println(BigDecimal.ONE);
         System.out.println(BigDecimal.TEN);
     }
+
+    private static void compare() {
+        System.out.println(BigDecimal.valueOf(0.0).equals(BigDecimal.valueOf(0))); // 値のscaleが異なるため、falseになってしまう
+        System.out.println(BigDecimal.valueOf(0).equals(BigDecimal.valueOf(0))); // true
+    }
+
+    private static void compareTo() {
+        BigDecimal one = BigDecimal.valueOf(1.00);
+        System.out.println(one.compareTo(BigDecimal.ZERO)); // 1
+        System.out.println(one.compareTo(BigDecimal.ONE)); // 0
+        System.out.println(one.compareTo(BigDecimal.TEN)); // -1
+    }
+
+    private static void add() {
+        BigDecimal three = BigDecimal.valueOf(3.00);
+        BigDecimal four = BigDecimal.valueOf(4.0);
+
+        System.out.println(three.add(four)); // 7.0
+    }
+
+    private static void subtract() {
+        BigDecimal three = BigDecimal.valueOf(3.00);
+        BigDecimal four = BigDecimal.valueOf(4.0);
+
+        System.out.println(three.subtract(four)); // -1.0
+    }
+
+    private static void multiply() {
+        BigDecimal three = BigDecimal.valueOf(3.00);
+        BigDecimal four = BigDecimal.valueOf(4.0);
+
+        System.out.println(three.multiply(four)); // 12.00
+    }
+
+    private static void divide() {
+        BigDecimal three = BigDecimal.valueOf(10.00);
+        BigDecimal four = BigDecimal.valueOf(3.0);
+
+        System.out.println(three.divide(four)); // 0.750
+    }
+
 }
